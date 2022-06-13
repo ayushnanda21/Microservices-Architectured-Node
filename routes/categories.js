@@ -4,30 +4,27 @@ const Category = require("../models/Category");
 const router = require("express").Router();
 
 const {
-    verifyToken,
-    verifyTokenAndAuthorization,
-    verifyTokenAndAdmin
-  } = require("./verifyToken");
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require("./verifyToken");
 
 //add category
-const CategoriesController = require("../controllers/categoriesController");
+const categoriesController = require("../controllers/categoriesController");
 
-router.post("/" , CategoriesController.createCategory);
+router.post("/", categoriesController.createCategory);
 
 //update category
-router.put("/:id", CategoriesController.updateCategory );
+router.put("/:id", categoriesController.updateCategory);
 
 //delete category
 
-router.delete("/:id", CategoriesController.deleteCategory );
-
+router.delete("/:id", categoriesController.deleteCategory);
 
 //get category list
-router.get("/", CategoriesController.getallCategories );
+router.get("/", categoriesController.getallCategories);
 
 //get particular category by id
-router.get("/:id", CategoriesController.getCategoryById);
+router.get("/:id", categoriesController.getcategorybyId);
 
-
-
-module.exports = router
+module.exports = router;

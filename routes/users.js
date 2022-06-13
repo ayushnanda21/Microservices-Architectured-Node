@@ -6,15 +6,15 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
 const {
-    verifyToken,
-    verifyTokenAndAuthorization,
-    verifyTokenAndAdmin
-  } = require("./verifyToken");
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require("./verifyToken");
 
-const UserController  =require("../controllers/userController");
+const UserController = require("../controllers/userController");
 
 //register user
-router.post("/register", UserController.userRegister );
+router.post("/register", UserController.userRegister);
 
 //login user
 router.post("/login", UserController.userLogin);
@@ -29,10 +29,9 @@ router.get("/", UserController.getallUsers);
 router.delete("/:id", UserController.deleteUser);
 
 //update user
-router.put("/:id" , UserController.updateUser);
+router.put("/:id", UserController.updateUser);
 
 //count of users
 router.get("/get/count", UserController.getUserCount);
 
-
-module.exports = router
+module.exports = router;
